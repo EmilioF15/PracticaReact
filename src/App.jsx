@@ -1,13 +1,25 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+const gatitos = [
+  { nombre: "soledad", edad: 12 },
+  { nombre: "Gordito", edad: 22 },
+];
+
 function App() {
   const [user, setUser] = useState({ nombre: "Cargando", edad: "Cargando" }); //este guarda el usuario
-  const [count, setCount] = useState(0); //Este estado almacena el contador
+  const [count, setCount] = useState(0);
+  const [gatito, setGatito] = useState("Gordito"); //Este estado almacena el contador
 
   useEffect(() => {
+    const promesa = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(gatitos);
+        reject("ha ocurrido un error");
+      }, 4000);
+    });
+    promesa.then((res) => console.log(res));
     setTimeout(() => {
-      setUser({ nombre: "loading", edad: "loading" });
       setUser({ nombre: "Emilio", edad: 25 });
     }, 3000);
     return setUser({ nombre: "Cargando", edad: "Cargando" });
@@ -28,6 +40,7 @@ function App() {
       <button onClick={increaseCount}>incrementar Contador</button>
       <h4>{count}</h4>
       <button onClick={resetCount}>Reiniciar Contador</button>
+      <h3>{gatito}</h3>
     </div>
   );
 }
