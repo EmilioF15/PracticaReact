@@ -1,30 +1,22 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import ItemList from "../ItemList/ItemList";
 
 function ItemListContainer() {
   const productos = [
     { id: 1, name: "Testing", des: "Descripcion", price: 45, stock: 40 },
-    { id: 2, name: "Testing 2", des: "Descripcion 2", price: 35, stock: 4 },
+    { id: 2, name: "Testing 2", des: "Descripcion 2", price: 20, stock: 4 },
+    { id: 3, name: "Testing 3", des: "Descripcion", price: 30, stock: 400 },
+    { id: 4, name: "Testing 4", des: "Descripcion 2", price: 50, stock: 14 },
   ];
 
   return (
-    <div>
-    Testing
-      {productos.map(producto=>
-        (<Card style={{ width: "18rem" }} key={producto.id}>
-        <Card.Img
-          variant="top"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Cj00c0IaeuqmsDcej3W3_A19Vxg19KLXlQ&s"
-        />
-        <Card.Body>
-          <Card.Title>{producto.name}</Card.Title>
-          <Card.Text>{producto.des}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      )
-      )}
-    </div>
+    <Container fluid>
+      Testing
+      <Row>
+      <ItemList productos ={productos}></ItemList>
+      </Row>
+    </Container>
   );
 }
 

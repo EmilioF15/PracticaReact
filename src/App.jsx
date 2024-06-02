@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import "./App.css";
 
-function App(){
+function App() {
   return (
     <div>
-    APP
-    <ItemListContainer/>
+      APP
+      <ItemListContainer />
     </div>
   );
-
 }
-
 
 export default App;
