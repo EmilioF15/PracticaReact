@@ -1,5 +1,5 @@
 // Este componente es el encargado de armar cada tarjeta individual, es un componente de vista
-import { Col } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 
 function Item({producto}){
@@ -8,13 +8,13 @@ function Item({producto}){
         <Card style={{ width: "18rem" }}>
           <Card.Img
             variant="top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Cj00c0IaeuqmsDcej3W3_A19Vxg19KLXlQ&s"
-          />
+            src={producto.images[0]}></Card.Img>
           <Card.Body>
-            <Card.Title>Producto: {producto.name}</Card.Title>
-            <Card.Text>Descripcion: {producto.des}</Card.Text>
-            <Card.Text>Precio: {producto.price}</Card.Text>
-            <Card.Text>Stock: {producto.stock}</Card.Text>
+            <Card.Title>Producto: {producto.title}</Card.Title>
+            <Card.Text>Descripcion: {producto.description}</Card.Text>
+            <Card.Text>Precio: {producto.price} USD</Card.Text>
+            <Card.Text>Stock: {producto.stock} Unidades</Card.Text>
+            <Button variant="secondary">Agregar al carro</Button>
           </Card.Body>
         </Card>
       </Col>
