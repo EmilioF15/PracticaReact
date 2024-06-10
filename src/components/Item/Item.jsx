@@ -1,6 +1,7 @@
 // Este componente es el encargado de armar cada tarjeta individual, es un componente de vista
 import { Button, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Item({producto}){
     return(
@@ -14,7 +15,8 @@ function Item({producto}){
             <Card.Text>Descripcion: {producto.description}</Card.Text>
             <Card.Text>Precio: {producto.price} USD</Card.Text>
             <Card.Text>Stock: {producto.stock} Unidades</Card.Text>
-            <Button variant="secondary">Agregar al carro</Button>
+            <Button variant="secondary">Agregar al carrito</Button>
+            <Button variant="primary" to={`/item/${producto.id}`} as={Link}>Ver detalles</Button>
           </Card.Body>
         </Card>
       </Col>

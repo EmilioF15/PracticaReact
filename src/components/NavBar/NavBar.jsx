@@ -18,8 +18,8 @@ function BasicExample() {
             <Nav.Link to="/category/smartphones" as={Link}>
               Smarthphones
             </Nav.Link>
-            <Nav.Link to="/category/notebooks" as={Link}>
-              Notebooks
+            <Nav.Link to="/category/furniture" as={Link}>
+              Furniture
             </Nav.Link>
             <Nav.Link to="/category/tv" as={Link}>
               tv
