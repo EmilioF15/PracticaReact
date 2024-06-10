@@ -13,12 +13,23 @@ function ItemListContainer() {
   //Dejar el array de dependencias vacio, asi solo se ejecuta cuando se monta el componente.Si pongo Items ahi, entro en un ciclo infinito
   //Disparo el render cuando cambio Items con setItems (se dispara el use State)
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/category/${id}`)
+    if (id){
+      fetch(`https://dummyjson.com/products/category/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.products);
         setItems(data.products);
       });
+    }
+    else {
+      fetch(`https://dummyjson.com/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.products);
+        setItems(data.products);
+      });
+    }
+    
   }, [id]);
 
   return (
