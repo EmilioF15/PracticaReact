@@ -21,7 +21,7 @@ function Item({ producto }) {
           <Button variant="secondary" onClick={handleAddToCart}>
             Agregar al carrito
           </Button>
-          <Button variant="primary" to={`/item/${producto.id}`} as={Link}>
+          <Button className="m-2" variant="primary" to={`/item/${producto.id}`} as={Link}>
             Ver detalles
           </Button>
         </Card.Body>
