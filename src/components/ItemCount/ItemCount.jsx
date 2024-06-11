@@ -20,7 +20,7 @@ function ItemCount({ initial = 1, stock, onAdd, item }) {
 
     const handleAdd = () => {
         onAdd(count);
-        addToCart({ item, quantity: count });
+        addToCart({ ...item, quantity: count });
     };
 
     return (
