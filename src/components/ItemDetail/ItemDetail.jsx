@@ -6,7 +6,7 @@ function ItemDetail({detail}){
         <p>{detail?.title}</p>
         <p>{detail?.price}</p>
         <p>{detail?.stock}</p>
-        <ItemCount/>
+        <ItemCount initial={1} stock={detail?.stock} onAdd={handleAddToCart} />
       </div>
     )
 

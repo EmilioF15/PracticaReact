@@ -2,8 +2,8 @@ import "./App.css";
 import WithLoggin from "./components/Hocs/WithLoggin";
 import Form from "./components/Formulario";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar"
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
@@ -11,12 +11,11 @@ function App() {
 
   return (
     <BrowserRouter>
-    <NavBar/>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer/>}/>
-        <Route path="/category/:id" element={<ItemListContainer/>}/>
-        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
   );
