@@ -1,11 +1,15 @@
+import React from 'react';
 import { serverTimestamp } from 'firebase/firestore';
 import { useCart } from '../../context/cartContext';
 import { createOrder } from '../../firebase/db';
+import Swal from 'sweetalert2';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 function CheckoutForm() {
     const { cart, getTotal } = useCart();
+    const isCartEmpty = cart.length === 0;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, mail, phone } = e.target.elements;
 
@@ -20,8 +24,32 @@ function CheckoutForm() {
             date: serverTimestamp()
         };
 
-        console.log(order); // Log the order to the console
-        createOrder(order);
+        try {
+            await createOrder(order);
+            Swal.fire({
+                title: '¡Orden creada!',
+                html: `
+                    <p>Gracias por su compra, ${order.buyer.name}!</p>
+                    <p><strong>Detalles de la orden:</strong></p>
+                    <p><strong>Email:</strong> ${order.buyer.email}</p>
+                    <p><strong>Teléfono:</strong> ${order.buyer.phone}</p>
+                    <p><strong>Total:</strong> $${order.total.toFixed(2)}</p>
+                    <p><strong>Artículos:</strong></p>
+                    <ul>
+                        ${order.items.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join('')}
+                    </ul>
+                `,
+                icon: 'success',
+                confirmButtonText: 'Volver a la tienda'
+            });
+        } catch (error) {
+            Swal.fire({
+                title: '¡Error!',
+                text: 'Hubo un error al crear su orden. Por favor, inténtelo de nuevo.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
     }
 
     return (
@@ -29,7 +57,19 @@ function CheckoutForm() {
             <input type="text" placeholder="name" name="name" required />
             <input type="email" placeholder="pepito@gmail.com" name="mail" required />
             <input type="text" placeholder="phone number" name="phone" required />
-            <button type="submit">Create Order</button>
+            <OverlayTrigger
+                overlay={
+                    <Tooltip>
+                        {isCartEmpty ? "El carrito está vacío, agrega un artículo para poder continuar" : ""}
+                    </Tooltip>
+                }
+            >
+                <span className="d-inline-block">
+                    <button type="submit" disabled={isCartEmpty} style={isCartEmpty ? { pointerEvents: 'none' } : {}}>
+                        Create Order
+                    </button>
+                </span>
+            </OverlayTrigger>
         </form>
     );
 }
