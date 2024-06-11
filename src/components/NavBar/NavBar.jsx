@@ -15,7 +15,7 @@ function BasicExample() {
             <Nav.Link to="/" as={Link}>
               Home
             </Nav.Link>
-            <Nav.Link to="/category/smartphones" as={Link}>
+            <Nav.Link to="/category/smartphone" as={Link}>
               Smarthphones
             </Nav.Link>
             <Nav.Link to="/category/furniture" as={Link}>

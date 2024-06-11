@@ -3,13 +3,13 @@ import { app } from "./config";
 
 import { collection, getDocs ,query, where } from "firebase/firestore";
 
-export const getItemsByCateogry = async (category) => {
-  const q = query(collection(db, "items"), where("category", "==", category));
+export const getItemsByCategory = async (category) => {
+  const q = category? query(collection(db, "items"), where("category", "==", category)): collection(db, "items") 
 
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    console.log(doc.data());
   });
 };
 
