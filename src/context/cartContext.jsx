@@ -7,7 +7,6 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (obj) => {
     setCart([...cart, obj])
-    console.log(obj)
   };
 
   return (

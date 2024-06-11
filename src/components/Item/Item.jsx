@@ -13,10 +13,9 @@ function Item({ producto }) {
   return (
     <Col lg={4} className="m-2">
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={producto.images[0]}></Card.Img>
+        <Card.Img variant="top" src={producto.img}></Card.Img>
         <Card.Body>
-          <Card.Title>Producto: {producto.title}</Card.Title>
-          <Card.Text>Descripcion: {producto.description}</Card.Text>
+          <Card.Title>Producto: {producto.name}</Card.Title>
           <Card.Text>Precio: {producto.price} USD</Card.Text>
           <Card.Text>Stock: {producto.stock} Unidades</Card.Text>
           <Button variant="secondary" onClick={handleAddToCart}>
