@@ -16,7 +16,6 @@ function ItemListContainer() {
   console.log(id);
 
   useEffect(() => {
-    getItems();
     setLoading(true); // Empieza el loading
     if (id) {
       fetch(`https://dummyjson.com/products/category/${id}`)
