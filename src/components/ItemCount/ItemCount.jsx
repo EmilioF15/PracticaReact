@@ -1,6 +1,9 @@
+// src/components/ItemCount.jsx
 import React, { useState } from 'react';
+import { useCart } from '../../context/cartContext';
 
-function ItemCount({ initial = 1, stock, onAdd }) {
+function ItemCount({ initial = 1, stock, onAdd, item }) {
+    const { addToCart } = useCart();
     const [count, setCount] = useState(initial);
 
     const increment = () => {
@@ -17,6 +20,7 @@ function ItemCount({ initial = 1, stock, onAdd }) {
 
     const handleAdd = () => {
         onAdd(count);
+        addToCart({ item, quantity: count });
     };
 
     return (

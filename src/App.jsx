@@ -1,7 +1,5 @@
 // src/App.jsx
 import "./App.css";
-import WithLoggin from "./components/Hocs/WithLoggin";
-import Form from "./components/Formulario";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -10,8 +8,6 @@ import { CartProvider } from "./context/cartContext";
 import Cart from "./components/Cart/Cart";
 
 function App() {
-  const FormWithLoggin = WithLoggin(Form);
-
   return (
     <CartProvider>
       <BrowserRouter>
