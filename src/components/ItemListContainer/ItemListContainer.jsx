@@ -5,6 +5,7 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
 import Loader from "../Loader/Loader";
+import { getItems } from "../../firebase/db";
 
 function ItemListContainer() {
   const [items, setItems] = useState([]);
@@ -15,6 +16,7 @@ function ItemListContainer() {
   console.log(id);
 
   useEffect(() => {
+    getItems();
     setLoading(true); // Empieza el loading
     if (id) {
       fetch(`https://dummyjson.com/products/category/${id}`)
