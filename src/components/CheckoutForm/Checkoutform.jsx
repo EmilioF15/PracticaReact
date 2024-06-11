@@ -54,9 +54,9 @@ function CheckoutForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="name" name="name" required />
-            <input type="email" placeholder="pepito@gmail.com" name="mail" required />
-            <input type="text" placeholder="phone number" name="phone" required />
+            <input type="text" placeholder="Nombre" name="name" required />
+            <input type="email" placeholder="email@dominio" name="mail" required />
+            <input type="text" placeholder="Numero de telefono" name="phone" required />
             <OverlayTrigger
                 overlay={
                     <Tooltip>
@@ -66,7 +66,7 @@ function CheckoutForm() {
             >
                 <span className="d-inline-block">
                     <button type="submit" disabled={isCartEmpty} style={isCartEmpty ? { pointerEvents: 'none' } : {}}>
-                        Create Order
+                        Crear Orden
                     </button>
                 </span>
             </OverlayTrigger>

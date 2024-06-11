@@ -27,7 +27,7 @@ function Cart() {
             <Row className="mt-3">
                 <Col>
                     {cart.length > 0 ? (
-                        <Link variant="primary" to="/checkout">Proceed to Checkout</Link>
+                        <Link variant="primary" to="/checkout">Proceder a Pagar</Link>
                     ) : null}
                 </Col>
             </Row>

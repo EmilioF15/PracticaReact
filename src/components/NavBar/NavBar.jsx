@@ -10,21 +10,21 @@ function BasicExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Capital Implants</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link to="/" as={Link}>
-              Home
+              Inicio
             </Nav.Link>
-            <Nav.Link to="/category/smartphone" as={Link}>
-              Smartphones
+            <Nav.Link to="/category/Stents" as={Link}>
+              Stents Coronarios
             </Nav.Link>
-            <Nav.Link to="/category/furniture" as={Link}>
-              Furniture
+            <Nav.Link to="/category/Suturas" as={Link}>
+              Suturas Mecanicas
             </Nav.Link>
-            <Nav.Link to="/category/tv" as={Link}>
-              TV
+            <Nav.Link to="/category/ImplantesMamarios" as={Link}>
+              Implantes Plasticos
             </Nav.Link>
             <Nav.Link to="/Cart" as={Link}>
               <CartWidget /> {/* Añadir el componente CartWidget */}
