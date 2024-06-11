@@ -1,8 +1,10 @@
+// src/components/NavBar/NavBar.jsx
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget"; // Ajusta la ruta según tu estructura de archivos
 
 function BasicExample() {
   return (
@@ -16,13 +18,16 @@ function BasicExample() {
               Home
             </Nav.Link>
             <Nav.Link to="/category/smartphone" as={Link}>
-              Smarthphones
+              Smartphones
             </Nav.Link>
             <Nav.Link to="/category/furniture" as={Link}>
               Furniture
             </Nav.Link>
             <Nav.Link to="/category/tv" as={Link}>
-              tv
+              TV
+            </Nav.Link>
+            <Nav.Link to="/Cart" as={Link}>
+              <CartWidget /> {/* Añadir el componente CartWidget */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
