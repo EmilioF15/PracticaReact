@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 function ItemDetailContainer() {
   const [detail, setDetail] = useState();
@@ -15,11 +16,8 @@ function ItemDetailContainer() {
   ;
 
   return (
-    <div>
-      <p>{detail?.title}</p>
-      <p>{detail?.price}</p>
-      <p>{detail?.stock}</p>
-    </div>
+    <ItemDetail detail={detail}/>
+ 
   );
 }
 
