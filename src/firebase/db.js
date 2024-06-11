@@ -15,10 +15,13 @@ export const getItem = async (id) => {
   try {
     const docRef = doc(db, "items", id);
     const docSnap = await getDoc(docRef);
+    let item = {};
 
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
-      return { id: docSnap.id, ...docSnap.data() };
+      item = {...docSnap.data(), id: docSnap.id}
+      return item;
+      
     } else {
       console.log("No such document!");
       return null;
