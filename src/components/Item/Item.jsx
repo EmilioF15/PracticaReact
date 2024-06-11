@@ -2,11 +2,11 @@
 import { Button, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context/cartContext";
+import { useCart } from "../../context/cartContext";
 import { useContext } from "react";
 
 function Item({ producto }) {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } =useCart();
   const handleAddToCart = () => {
     addToCart(producto);
   };
