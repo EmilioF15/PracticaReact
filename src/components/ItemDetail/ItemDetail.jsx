@@ -7,8 +7,9 @@ function ItemDetail({ detail }) {
 
   return (
     <div>
-      <p>{detail.name}</p>
-      <p>{detail.price}</p>
+      <h2>{detail.name}</h2>
+      <img src={detail.img}/>
+      <h3>Precio :{detail.price} USD</h3>
       <ItemCount initial={1} stock={detail?.stock} onAdd={handleAdd} item={detail} />
     </div>
   );
