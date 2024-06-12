@@ -32,8 +32,8 @@ function ItemListContainer() {
   }, [id]);
 
   return (
-    <Container fluid>
-      <Row className="d-grid gap-3">
+    <Container>
+      <Row className="justify-content-md-center">
         {loading ? <Loader loading={true} /> : <ItemList productos={items} />}
       </Row>
     </Container>

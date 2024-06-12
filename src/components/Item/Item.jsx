@@ -11,7 +11,7 @@ function Item({ producto }) {
     addToCart(producto);
   };
   return (
-    <Col lg={4} className="m-2">
+    <Col className="justify-content-md-center">
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={producto.img}></Card.Img>
         <Card.Body>
