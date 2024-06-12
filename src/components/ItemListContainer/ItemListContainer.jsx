@@ -32,7 +32,7 @@ function ItemListContainer() {
   }, [id]);
 
   return (
-    <Container>
+    <Container className="d-grid gap-3">
       <Row className="justify-content-md-center">
         {loading ? <Loader loading={true} /> : <ItemList productos={items} />}
       </Row>

@@ -56,3 +56,9 @@
 .badge {
   font-size: 0.75em;
 }
+
+.card-img-top{
+  height: 222px !important;
+  width: 222px !important;
+  border-radius: 15px;
+}

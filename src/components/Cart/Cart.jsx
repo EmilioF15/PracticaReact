@@ -14,7 +14,7 @@ function Cart() {
                     <ListGroup.Item key={index}>
                         <Row>
                             <Col>{item.name}</Col>
-                            <Col>${item.price.toFixed(2)}</Col>
+                            <Col>${item.price.toFixed(2)} USD</Col>
                             <Col>Cantidad: {item.quantity}</Col>
                         </Row>
                     </ListGroup.Item>
@@ -22,13 +22,13 @@ function Cart() {
             </ListGroup>
             <Row className="mt-3">
                 <Col>
-                    <h4>Total: ${getTotal().toFixed(2)}</h4>
+                    <h4>Total: ${getTotal().toFixed(2)} USD</h4>
                 </Col>
             </Row>
             <Row className="mt-3">
                 <Col>
                     {cart.length > 0 ? (
-                        <Link variant="primary" to="/checkout">Proceder a Pagar</Link>
+                        <Link variant="primary" to="/checkout">Finalizar Compra</Link>
                     ) : null}
                 </Col>
             </Row>

@@ -12,7 +12,7 @@ function Item({ producto }) {
   };
   return (
     <Col className="justify-content-md-center">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="m-2">
         <Card.Img variant="top" src={producto.img}></Card.Img>
         <Card.Body>
           <Card.Title>Producto: {producto.name}</Card.Title>
