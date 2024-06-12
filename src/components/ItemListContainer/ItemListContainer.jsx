@@ -33,7 +33,7 @@ function ItemListContainer() {
 
   return (
     <Container fluid>
-      <Row>
+      <Row className="d-grid gap-3">
         {loading ? <Loader loading={true} /> : <ItemList productos={items} />}
       </Row>
     </Container>
