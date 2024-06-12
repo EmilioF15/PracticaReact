@@ -18,9 +18,6 @@ function Item({ producto }) {
           <Card.Title>Producto: {producto.name}</Card.Title>
           <Card.Text>Precio: {producto.price} USD</Card.Text>
           <Card.Text>Stock: {producto.stock} Unidades</Card.Text>
-          <Button variant="secondary" onClick={handleAddToCart}>
-            Agregar al carrito
-          </Button>
           <Button className="m-2" variant="primary" to={`/item/${producto.id}`} as={Link}>
             Ver detalles
           </Button>

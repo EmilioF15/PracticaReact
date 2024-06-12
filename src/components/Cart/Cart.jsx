@@ -15,6 +15,7 @@ function Cart() {
                         <Row>
                             <Col>{item.name}</Col>
                             <Col>${item.price.toFixed(2)}</Col>
+                            <Col>Cantidad: {item.quantity}</Col>
                         </Row>
                     </ListGroup.Item>
                 ))}

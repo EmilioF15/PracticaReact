@@ -6,11 +6,20 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (obj) => {
-    setCart([...cart, obj]);
+    setCart((prevCart) => {
+      const itemIndex = prevCart.findIndex(item => item.id === obj.id);
+      if (itemIndex > -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[itemIndex].quantity += obj.quantity;
+        return updatedCart;
+      } else {
+        return [...prevCart, obj];
+      }
+    });
   };
 
   const getTotal = () => {
-    const prices = cart.map(item => item.price);
+    const prices = cart.map(item => item.price * item.quantity);
     const total = prices.reduce((acc, current) => acc + current, 0);
     return total;
   };
